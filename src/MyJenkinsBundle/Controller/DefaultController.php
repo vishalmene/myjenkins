@@ -13,6 +13,6 @@ class DefaultController extends Controller
     public function indexAction() 
     {
     
-       eturn $this->render('MyJenkinsBundle:Default:index.html.twig');
+       return $this->render('MyJenkinsBundle:Default:index.html.twig');
     }
 }
