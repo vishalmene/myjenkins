@@ -137,10 +137,17 @@
     </exec>
   </target>
 
-  <target name="vendors" description="Update vendors">
+  <target name="composer" description="Install composer.phar">
+      <exec executable="bash">
+          <arg value="-c"/>
+          <arg value="curl -s http://getcomposer.org/installer | php"/>
+      </exec>
+  </target>  
+
+  <target name="vendors" description="Install vendors">
     <exec executable="php" failonerror="true">
-        <arg value="composer.phar" />
-        <arg value="update" />
+        <arg value="${basedir}/composer.phar" />
+        <arg value="install" />
     </exec>
   </target>
 
