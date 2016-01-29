@@ -11,8 +11,8 @@ class DefaultController extends Controller
      * @Route("/hello")
      */
     public function indexAction() 
-    {
-    
-                return $this->render('MyJenkinsBundle:Default:index.html.twig');
+          {
+              
+          return $this->render('MyJenkinsBundle:Default:index.html.twig');
     }
 }
