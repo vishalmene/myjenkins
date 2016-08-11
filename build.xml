@@ -58,6 +58,7 @@
     <exec executable="phploc">
     <arg value="--log-csv" />
     <arg value="${builddir}/logs/phploc.csv" />
+    <arg path="${sourcedir}" />
     </exec>
   </target>
 
