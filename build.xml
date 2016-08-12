@@ -100,7 +100,7 @@
     <exec executable="/usr/local/bin/phpcs">
       <arg value="--report=checkstyle" />
       <arg value="--report-file=${builddir}/logs/checkstyle.xml" />
-      <arg value="--standard=PSR2" />
+      <arg value="--standard=Symfony2" />
       <arg path="${sourcedir}" />
     </exec>
   </target>
