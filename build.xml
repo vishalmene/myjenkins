@@ -4,6 +4,8 @@
   <property name="workspace" value="${basedir}" />
   <property name="sourcedir" value="${basedir}/src" />
   <property name="builddir" value="${workspace}/app/build" />
+  <property name="composer.path" value="${basedir}/composer.phar" />
+  <available property="composer.exists" file="${composer.path}" />
 
   <target name="build"
   depends="prepare,vendors,parameters,lint,phploc,pdepend,phpcpd,phpmd-ci,phpcs-ci,phpunit,phpcb"/>
@@ -128,6 +130,11 @@
       <arg path="${builddir}/code-browser" />
     </exec>
   </target>
+  
+  <target name="composer" unless="composer.exists">
+    <get src="http://getcomposer.org/composer.phar" dest="${composer.path}" />
+    <chmod file="${composer.path}" perm="775" />
+  </target>  
 
   <target name="vendors" description="Update vendors">
     <exec executable="php" failonerror="true">
