@@ -90,14 +90,14 @@
   </target>
 
   <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-    <exec executable="/home/infobeans/.composer/vendor/bin/phpcs">
+    <exec executable="/usr/local/bin/phpcs">
       <arg value="--standard=Symfony2" />
       <arg path="${sourcedir}" />
     </exec>
   </target>
 
   <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-    <exec executable="/home/infobeans/.composer/vendor/bin/phpcs">
+    <exec executable="/usr/local/bin/phpcs">
       <arg value="--report=checkstyle" />
       <arg value="--report-file=${builddir}/logs/checkstyle.xml" />
       <arg value="--standard=Symfony2" />
