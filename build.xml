@@ -63,7 +63,7 @@
   </target>
 
   <target name="pdepend" description="Calculate software metrics using PHP_Depend">
-    <exec executable="/usr/bin/pdepend">
+    <exec executable="/usr/local/bin/pdepend">
       <arg value="--jdepend-xml=${builddir}/logs/jdepend.xml" />
       <arg value="--jdepend-chart=${builddir}/pdepend/dependencies.svg" />
       <arg value="--overview-pyramid=${builddir}/pdepend/overview-pyramid.svg" />
@@ -72,7 +72,7 @@
   </target>
 
   <target name="phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
-    <exec executable="/usr/bin/phpmd">
+    <exec executable="/usr/local/bin/phpmd">
       <arg path="${basedir}/src" />
       <arg value="text" />
       <arg value="${workspace}/app/phpmd.xml" />
@@ -80,7 +80,7 @@
   </target>
 
   <target name="phpmd-ci" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
-    <exec executable="/usr/bin/phpmd">
+    <exec executable="/usr/local/bin/phpmd">
       <arg path="${sourcedir}" />
       <arg value="xml" />
       <arg value="${workspace}/app/phpmd.xml" />
