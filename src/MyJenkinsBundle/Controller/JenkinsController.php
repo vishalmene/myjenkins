@@ -7,7 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class JenkinsController extends Controller
 {
-	/**
+    /**
      * @Route("/new")
      */
     public function indexAction()
